@@ -1,0 +1,289 @@
+﻿Table Name:Admin
+Field Name
+Datatype
+Null
+Constraints
+Description
+AdminId
+int
+Not null
+Primary key
+Auto Increment
+Admin Name
+varchar(100)
+Not null
+-
+-
+
+TableName:Customer
+Field Name
+Datatype
+Null
+Constraints
+Description
+Custid
+int
+Not null
+Primary key
+Auto Increment
+UserName
+varchar(100)
+Not null
+-
+-
+Upassword
+varchar(100)
+Not null
+-
+-
+UserEmail
+varchar(100)
+Not null
+-
+-
+UserPhone
+Number
+Not null
+-
+-
+Address
+varchar(100)
+Not null
+-
+-
+
+Table Name:Account
+Field Name
+Datatype
+Null
+Constraints
+Description
+AccId
+int
+Not null
+Primary key
+Auto Increment
+
+Active
+Boolean
+Not null
+-
+-
+CustId
+int
+Not null
+Foriegn key
+Refernce of customer
+
+TableName:Cart
+Field Name
+Datatype
+Null
+Constraints
+Description
+CartId
+int
+Not null
+Primary key
+Auto Increment
+
+CustId
+int
+Not null
+Foriegn key
+Refernce of customer
+ProductId
+int
+Not null
+Foriegn key
+Refernce of product
+Price
+Number
+null
+-
+-
+
+TableName:Payment
+Field Name
+Datatype
+Null
+Constraints
+Description
+PaymentId
+int
+Not null
+Primary key
+Auto Increment
+
+AccId
+int
+Not null
+Foriegn key
+Refernce of account
+OrderId
+int
+Not null
+Foriegn key
+Refernce of Order
+CartId
+int
+Not null
+Foriegn key
+Refernce of cart
+Paid
+Boolean
+null
+-
+-
+Total
+Number
+Not null
+-
+-
+TableName:Order
+Field Name
+Datatype
+Null
+Constraints
+Description
+OrderId
+int
+Not null
+Primary key
+Auto Increment
+
+CartId
+int
+Not null
+Foriegn key
+Refernce of cart
+CustId
+int
+Not null
+Foriegn key
+Refernce of customer
+Shipped
+datetime
+Not null
+-
+-
+Status
+varchar(50)
+Not null
+-
+-
+ProductId
+int
+Not null
+Foriegn key
+Refernce of product
+
+TableName:Delivery
+
+Field Name
+Datatype
+Null
+Constraints
+Description
+DeliveryId
+int
+Not null
+Primary key
+Auto Increment
+
+OrderId
+int
+Not null
+Foriegn key
+Refernce of cart
+CustId
+int
+Not null
+Foriegn key
+Refernce of customer
+Details
+varchar(100)
+Not null
+-
+-
+DelDate
+datetime
+Not null
+-
+-
+
+TableName:Transporter
+Field Name
+Datatype
+Null
+Constraints
+Description
+TransprterId
+int
+Not null
+Primary key
+Auto Increment
+
+OrderId
+int
+Not null
+Foriegn key
+Refernce of order
+DeliveryId
+int
+Not null
+Foriegn key
+Refernce of delivery
+Name
+varchar(100)
+Not null
+-
+-
+
+TableName:Product
+Field Name
+Datatype
+Null
+Constraints
+Description
+ProductId
+int
+Not null
+Primary key
+Auto Increment
+
+Name
+varchar(100)
+Not null
+-
+-
+Group
+varchar(100)
+Not null
+-
+-
+
+TableName:Worker
+Field Name
+Datatype
+Null
+Constraints
+Description
+WorkerId
+int
+Not null
+Primary key
+Auto Increment
+
+Workername
+varchar(100)
+Not null
+-
+-
+Dept
+varchar(100)
+Not null
+-
+-
+
+
